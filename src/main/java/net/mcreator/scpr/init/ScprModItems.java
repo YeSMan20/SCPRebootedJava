@@ -16,6 +16,6 @@ import net.mcreator.scpr.ScprMod;
 
 public class ScprModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ScprMod.MODID);
-	public static final RegistryObject<Item> TESTING = REGISTRY.register("testing_spawn_egg",
-			() -> new ForgeSpawnEggItem(ScprModEntities.TESTING, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> TEST = REGISTRY.register("test_spawn_egg",
+			() -> new ForgeSpawnEggItem(ScprModEntities.TEST, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

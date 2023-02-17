@@ -16,15 +16,15 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.scpr.entity.TestingEntity;
+import net.mcreator.scpr.entity.TestEntity;
 import net.mcreator.scpr.ScprMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ScprModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ScprMod.MODID);
-	public static final RegistryObject<EntityType<TestingEntity>> TESTING = register("testing",
-			EntityType.Builder.<TestingEntity>of(TestingEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(3).setCustomClientFactory(TestingEntity::new)
+	public static final RegistryObject<EntityType<TestEntity>> TEST = register("test",
+			EntityType.Builder.<TestEntity>of(TestEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(3).setCustomClientFactory(TestEntity::new)
 
 					.sized(0.6f, 1.8f));
 
@@ -35,12 +35,12 @@ public class ScprModEntities {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			TestingEntity.init();
+			TestEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(TESTING.get(), TestingEntity.createAttributes().build());
+		event.put(TEST.get(), TestEntity.createAttributes().build());
 	}
 }

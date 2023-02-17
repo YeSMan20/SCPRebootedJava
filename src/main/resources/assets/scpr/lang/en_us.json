@@ -1,4 +1,4 @@
 {
-  "entity.scpr.testing": "Testing",
-  "item.scpr.testing_spawn_egg": "Testing Spawn Egg"
+  "item.scpr.test_spawn_egg": "Test Spawn Egg",
+  "entity.scpr.test": "Test"
 }

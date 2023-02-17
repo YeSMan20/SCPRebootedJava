@@ -28,12 +28,12 @@ import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.scpr.init.ScprModEntities;
 
-public class TestingEntity extends Monster {
-	public TestingEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(ScprModEntities.TESTING.get(), world);
+public class TestEntity extends Monster {
+	public TestEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(ScprModEntities.TEST.get(), world);
 	}
 
-	public TestingEntity(EntityType<TestingEntity> type, Level world) {
+	public TestEntity(EntityType<TestEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -75,7 +75,7 @@ public class TestingEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(ScprModEntities.TESTING.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+		SpawnPlacements.register(ScprModEntities.TEST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL
 						&& Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}

@@ -8,17 +8,17 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.HumanoidModel;
 
-import net.mcreator.scpr.entity.TestingEntity;
+import net.mcreator.scpr.entity.TestEntity;
 
-public class TestingRenderer extends HumanoidMobRenderer<TestingEntity, HumanoidModel<TestingEntity>> {
-	public TestingRenderer(EntityRendererProvider.Context context) {
+public class TestRenderer extends HumanoidMobRenderer<TestEntity, HumanoidModel<TestEntity>> {
+	public TestRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
 		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),
 				new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(TestingEntity entity) {
+	public ResourceLocation getTextureLocation(TestEntity entity) {
 		return new ResourceLocation("scpr:textures/entities/dclass-steve.png");
 	}
 }
