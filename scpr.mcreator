@@ -1,9 +1,21 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "Testing",
+      "type": "livingentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "testing"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "entity.scpr.testing": "Testing",
+      "item.scpr.testing_spawn_egg": "Testing Spawn Egg"
+    }
   },
   "foldersRoot": {
     "name": "~",
